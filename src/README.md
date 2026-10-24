@@ -25,6 +25,21 @@ A super simple FastAPI application that allows students to view and sign up for 
    - API documentation: http://localhost:8000/docs
    - Alternative documentation: http://localhost:8000/redoc
 
+## Teacher access
+
+Only logged-in teachers can register or unregister students. Activity listings
+and participant lists remain public. Create or update a teacher account from
+the `src` directory with:
+
+```sh
+python manage_teachers.py
+```
+
+The command prompts for a username and password, stores a PBKDF2 password hash
+in the local, Git-ignored `teachers.json` file. `teachers.example.json` shows
+the expected file format. Teacher sessions expire after eight hours and are
+cleared when the server restarts.
+
 ## API Endpoints
 
 | Method | Endpoint                                                          | Description                                                         |
